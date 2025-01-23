@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     },
     text: {
       width: '90%',
+      fontSize: 20,
     },
   },
   itemContainer: {

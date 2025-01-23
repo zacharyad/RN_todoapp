@@ -22,17 +22,16 @@ function GoalInput({ addGoalHandler, isModalVisible, handleToggleModal }) {
   }
 
   function handleCancel() {
-    setGoalVal('');
-    setBtnText('Cancel');
     handleToggleModal();
+    setGoalVal(() => '');
+    setBtnText(() => 'Cancel');
   }
 
   function handleGoalTextInput(text) {
-    console.log('text Length: ', text.length);
     if (text.trim().length > 0) {
-      setBtnText('Add Goal');
+      setBtnText(() => 'Add Goal');
     } else {
-      setBtnText('Cancel');
+      setBtnText(() => 'Cancel');
     }
     setGoalVal(text);
   }
@@ -62,7 +61,7 @@ function GoalInput({ addGoalHandler, isModalVisible, handleToggleModal }) {
             {btnText === 'Cancel' ? '' : btnText}
           </Text>
         </Pressable>
-        <Button color="orange" title="Cancel" onPress={() => handleCancel()} />
+        <Button color="red" title="Cancel" onPress={() => handleCancel()} />
       </View>
     </Modal>
   );
